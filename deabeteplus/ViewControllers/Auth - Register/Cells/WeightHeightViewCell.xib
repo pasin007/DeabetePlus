@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Kodchasan-Regular.ttf">
+            <string>Kodchasan-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="WeightHeightViewCell" customModule="deabeteplus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="406" height="111"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="406" height="111"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lpg-Io-k2m">
+                        <rect key="frame" x="36" y="10" width="334" height="91"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N84-Ce-5Ce">
+                                <rect key="frame" x="0.0" y="0.0" width="157" height="91"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="น้ำหนัก" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQr-qx-4yW" customClass="MFTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="157" height="91"/>
+                                        <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ก.ก." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNh-LG-eyU">
+                                        <rect key="frame" x="123.5" y="62" width="28.5" height="21"/>
+                                        <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="dQr-qx-4yW" firstAttribute="leading" secondItem="N84-Ce-5Ce" secondAttribute="leading" id="1Nd-5M-b0l"/>
+                                    <constraint firstAttribute="trailing" secondItem="dQr-qx-4yW" secondAttribute="trailing" id="2JN-07-Gjl"/>
+                                    <constraint firstAttribute="bottom" secondItem="dQr-qx-4yW" secondAttribute="bottom" id="4Fg-mW-j9N"/>
+                                    <constraint firstItem="dQr-qx-4yW" firstAttribute="top" secondItem="N84-Ce-5Ce" secondAttribute="top" id="O8q-2N-okF"/>
+                                    <constraint firstAttribute="trailing" secondItem="HNh-LG-eyU" secondAttribute="trailing" constant="5" id="O9Q-gC-gfR"/>
+                                    <constraint firstAttribute="bottom" secondItem="HNh-LG-eyU" secondAttribute="bottom" constant="8" id="R3n-0D-iJ9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDM-CQ-sZh">
+                                <rect key="frame" x="177" y="0.0" width="157" height="91"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ส่วนสูง" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0uk-fs-nfY" customClass="MFTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="157" height="91"/>
+                                        <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ซ.ม." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAb-tO-mg1">
+                                        <rect key="frame" x="123" y="62" width="29" height="21"/>
+                                        <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0uk-fs-nfY" firstAttribute="leading" secondItem="JDM-CQ-sZh" secondAttribute="leading" id="RZF-oc-Sz5"/>
+                                    <constraint firstAttribute="trailing" secondItem="0uk-fs-nfY" secondAttribute="trailing" id="ZBX-0D-2FG"/>
+                                    <constraint firstAttribute="bottom" secondItem="0uk-fs-nfY" secondAttribute="bottom" id="cwO-U0-ogg"/>
+                                    <constraint firstAttribute="trailing" secondItem="XAb-tO-mg1" secondAttribute="trailing" constant="5" id="dcK-KM-qRJ"/>
+                                    <constraint firstItem="0uk-fs-nfY" firstAttribute="top" secondItem="JDM-CQ-sZh" secondAttribute="top" id="eua-VJ-BX7"/>
+                                    <constraint firstAttribute="bottom" secondItem="XAb-tO-mg1" secondAttribute="bottom" constant="8" id="yW8-hE-3ez"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lpg-Io-k2m" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Cg0-iF-gFx"/>
+                    <constraint firstItem="lpg-Io-k2m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="Ld1-yF-Kbx"/>
+                    <constraint firstAttribute="bottom" secondItem="lpg-Io-k2m" secondAttribute="bottom" constant="10" id="ZF6-ML-TC2"/>
+                    <constraint firstAttribute="trailing" secondItem="lpg-Io-k2m" secondAttribute="trailing" constant="36" id="hPN-dW-JPj"/>
+                    <constraint firstItem="lpg-Io-k2m" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qWR-oy-UO8"/>
+                    <constraint firstItem="lpg-Io-k2m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="spq-1J-0F4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="heightTextField" destination="0uk-fs-nfY" id="kcw-kb-Es8"/>
+                <outlet property="weightTextField" destination="dQr-qx-4yW" id="UB7-XA-4Qv"/>
+            </connections>
+            <point key="canvasLocation" x="200.00000000000003" y="142.96875"/>
+        </tableViewCell>
+    </objects>
+</document>

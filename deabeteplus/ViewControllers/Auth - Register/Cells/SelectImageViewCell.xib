@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="207" id="KGk-i7-Jjw" customClass="SelectImageViewCell" customModule="deabeteplus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="207"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="450" height="207"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNr-jk-5jC">
+                        <rect key="frame" x="168.5" y="15" width="113" height="113"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mooDang" translatesAutoresizingMaskIntoConstraints="NO" id="FgD-NZ-MAO">
+                                <rect key="frame" x="10" y="10" width="93" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="5GD-cQ-T2g"/>
+                                    <constraint firstAttribute="width" constant="93" id="U3F-Ci-AV7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="46.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 12" translatesAutoresizingMaskIntoConstraints="NO" id="xv3-SF-g7h">
+                                <rect key="frame" x="89" y="89" width="19" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="19" id="6cm-nq-53N"/>
+                                    <constraint firstAttribute="height" constant="19" id="PAU-Fb-G5h"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viR-4m-zIu">
+                                <rect key="frame" x="0.0" y="0.0" width="113" height="113"/>
+                                <connections>
+                                    <action selector="doSelectImage" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HkV-YG-8iX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FgD-NZ-MAO" secondAttribute="trailing" constant="10" id="DfX-fF-sgi"/>
+                            <constraint firstItem="viR-4m-zIu" firstAttribute="leading" secondItem="fNr-jk-5jC" secondAttribute="leading" id="TSL-VG-Fje"/>
+                            <constraint firstAttribute="bottom" secondItem="viR-4m-zIu" secondAttribute="bottom" id="YLa-gP-5bB"/>
+                            <constraint firstItem="FgD-NZ-MAO" firstAttribute="leading" secondItem="fNr-jk-5jC" secondAttribute="leading" constant="10" id="Zxt-No-Q42"/>
+                            <constraint firstAttribute="bottom" secondItem="xv3-SF-g7h" secondAttribute="bottom" constant="5" id="aMw-Y9-DaE"/>
+                            <constraint firstItem="FgD-NZ-MAO" firstAttribute="top" secondItem="fNr-jk-5jC" secondAttribute="top" constant="10" id="iGb-YX-dGg"/>
+                            <constraint firstAttribute="trailing" secondItem="xv3-SF-g7h" secondAttribute="trailing" constant="5" id="lWh-fH-gLB"/>
+                            <constraint firstAttribute="bottom" secondItem="FgD-NZ-MAO" secondAttribute="bottom" constant="10" id="lgk-S4-7xO"/>
+                            <constraint firstAttribute="trailing" secondItem="viR-4m-zIu" secondAttribute="trailing" id="t4V-k8-Nrh"/>
+                            <constraint firstItem="viR-4m-zIu" firstAttribute="top" secondItem="fNr-jk-5jC" secondAttribute="top" id="v8C-vi-IUv"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fNr-jk-5jC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1pu-qa-GAP"/>
+                    <constraint firstItem="fNr-jk-5jC" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="bnr-Wk-U60"/>
+                    <constraint firstItem="fNr-jk-5jC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ij7-W0-9Ft"/>
+                    <constraint firstAttribute="bottom" secondItem="fNr-jk-5jC" secondAttribute="bottom" constant="15" id="sSn-zQ-Fbp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="profileImageView" destination="FgD-NZ-MAO" id="8RW-kb-7i8"/>
+            </connections>
+            <point key="canvasLocation" x="231.8840579710145" y="176.45089285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Group 12" width="20" height="20"/>
+        <image name="mooDang" width="156" height="185"/>
+    </resources>
+</document>

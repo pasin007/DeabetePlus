@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Material Text Field Demo View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MaterialTextFieldDemoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="some text" placeholder="placeholder" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Wbu-R9-PKC" customClass="MFTextField">
+                                <rect key="frame" x="16" y="160" width="343" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="sQf-86-yeo"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="placeholder" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vrI-fI-vIo" customClass="MFTextField">
+                                <rect key="frame" x="16" y="100" width="343" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="99k-UB-cHg"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="CoC-To-3pE"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="A1d-5c-S25" customClass="MFTextField">
+                                <rect key="frame" x="16" y="220" width="343" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultPlaceholderColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="textPadding">
+                                        <size key="value" width="20" height="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="errorPadding">
+                                        <size key="value" width="20" height="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="uMx-3J-4yS"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="number" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gNx-E7-aGq" customClass="MFTextField">
+                                <rect key="frame" x="16" y="20" width="343" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="WVM-lw-vpg"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0u6-qT-cZ2"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="placeholder" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z0L-Ka-jzP" customClass="MFTextField">
+                                <rect key="frame" x="16" y="272.5" width="343" height="40"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="textPadding">
+                                        <size key="value" width="8" height="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="errorPadding">
+                                        <size key="value" width="8" height="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="7p3-ay-HPi"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xHD-DP-ky4"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="A1d-5c-S25" secondAttribute="trailing" id="CXZ-f3-7u8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wbu-R9-PKC" secondAttribute="trailing" id="D6h-1M-3ar"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gNx-E7-aGq" secondAttribute="trailing" id="I3m-w6-1eA"/>
+                            <constraint firstItem="gNx-E7-aGq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JGp-OO-Lj7"/>
+                            <constraint firstItem="vrI-fI-vIo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OcS-24-SuD"/>
+                            <constraint firstItem="Z0L-Ka-jzP" firstAttribute="top" secondItem="A1d-5c-S25" secondAttribute="bottom" constant="20" id="Tsl-Z9-wd4"/>
+                            <constraint firstItem="Wbu-R9-PKC" firstAttribute="top" secondItem="vrI-fI-vIo" secondAttribute="bottom" constant="20" id="TxR-tX-kSq"/>
+                            <constraint firstItem="A1d-5c-S25" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V7P-NO-erp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vrI-fI-vIo" secondAttribute="trailing" id="XRC-Do-j64"/>
+                            <constraint firstItem="vrI-fI-vIo" firstAttribute="top" secondItem="gNx-E7-aGq" secondAttribute="bottom" constant="20" id="YpL-as-BsA"/>
+                            <constraint firstItem="Z0L-Ka-jzP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aEg-nt-aHp"/>
+                            <constraint firstItem="Wbu-R9-PKC" firstAttribute="leading" secondItem="vrI-fI-vIo" secondAttribute="leading" id="fuU-6H-anJ"/>
+                            <constraint firstItem="gNx-E7-aGq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="lwY-Tl-Xmh"/>
+                            <constraint firstItem="A1d-5c-S25" firstAttribute="top" secondItem="Wbu-R9-PKC" secondAttribute="bottom" constant="20" id="sAh-8l-mox"/>
+                            <constraint firstItem="Z0L-Ka-jzP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yzG-BW-5DI"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="c8Q-pN-pP5" appends="YES" id="9Q4-no-6ng"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="textField1" destination="gNx-E7-aGq" id="1pI-Mq-qvh"/>
+                        <outlet property="textField2" destination="vrI-fI-vIo" id="e8w-3k-NaW"/>
+                        <outlet property="textField4" destination="A1d-5c-S25" id="k4X-gw-qB1"/>
+                        <outlet property="textField5" destination="Z0L-Ka-jzP" id="lDR-gK-uuK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="c8Q-pN-pP5">
+                    <connections>
+                        <action selector="dismissKeyboard" destination="BYZ-38-t0r" id="Q4X-cg-BhF"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="349" y="222"/>
+        </scene>
+    </scenes>
+</document>

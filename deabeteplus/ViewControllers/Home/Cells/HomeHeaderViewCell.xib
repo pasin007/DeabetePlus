@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeHeaderViewCell" customModule="deabeteplus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="149"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="1WQ-8d-H3S">
+                    <rect key="frame" x="0.0" y="0.0" width="420" height="149"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="csK-Tg-PPN">
+                    <rect key="frame" x="18" y="29.5" width="384" height="90"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mooDang" translatesAutoresizingMaskIntoConstraints="NO" id="Bft-ND-9ma">
+                            <rect key="frame" x="0.0" y="10" width="70" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="9xl-np-yG7"/>
+                                <constraint firstAttribute="width" constant="70" id="sYy-iH-azh"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdffsdgsdfgsfdgh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtz-8r-iF1">
+                            <rect key="frame" x="181" y="29.5" width="203" height="31.5"/>
+                            <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="Y4T-0d-f6R"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="1WQ-8d-H3S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2ob-9I-9Ec"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="csK-Tg-PPN" secondAttribute="trailing" constant="18" id="BDP-7j-kXM"/>
+                <constraint firstItem="csK-Tg-PPN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dqf-4j-4TC"/>
+                <constraint firstAttribute="bottom" secondItem="1WQ-8d-H3S" secondAttribute="bottom" id="eaX-wS-rMU"/>
+                <constraint firstItem="csK-Tg-PPN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="f8h-up-TU1"/>
+                <constraint firstItem="1WQ-8d-H3S" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kpm-Fo-dAi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1WQ-8d-H3S" secondAttribute="trailing" id="mfW-d3-NfY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="calLabel" destination="Rtz-8r-iF1" id="2c3-US-7My"/>
+                <outlet property="profileImage" destination="Bft-ND-9ma" id="Nw8-SM-9UO"/>
+            </connections>
+            <point key="canvasLocation" x="142.02898550724638" y="-148.32589285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg" width="378" height="97"/>
+        <image name="mooDang" width="156" height="185"/>
+    </resources>
+</document>
