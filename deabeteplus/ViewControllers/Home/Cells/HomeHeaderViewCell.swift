@@ -12,9 +12,7 @@ class HomeHeaderViewCell: UITableViewHeaderFooterView, BaseViewCell {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var calLabel: UILabel!
-//    if let font = UIFont(name: "Kodchasan-SemiBold", size: 18) {
-//        cell.textLabel?.font = font
-//    }
+
 
     func configure( cal: Int, carb: Int) {
         

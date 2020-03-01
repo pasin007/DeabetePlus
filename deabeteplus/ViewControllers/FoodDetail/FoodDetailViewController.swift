@@ -76,7 +76,6 @@ extension FoodDetailViewController {
             "image" : imageUrl,
             "name" : name
         ]
-//        debugPrint(parms)
         foodViewModel.scanFood(parms, onSuccess: { [weak self] (response) in
             let txt = response.status ? "กินอาหารเกิน" : ""
             
