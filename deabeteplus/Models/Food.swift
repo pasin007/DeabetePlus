@@ -23,5 +23,6 @@ struct Food: Codable {
 
 struct RecommendFood: Codable {
     var cal_today: Int
+    var carb_today: Int
     var foods: [Food]
 }

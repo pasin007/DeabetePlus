@@ -13,36 +13,49 @@
             <rect key="frame" x="0.0" y="0.0" width="486" height="234"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="AfW-YE-JfS">
-                    <rect key="frame" x="20" y="92" width="446" height="50"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LM-rI-6SK">
+                    <rect key="frame" x="0.0" y="44" width="486" height="156"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพื่อน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxK-if-TZQ">
-                            <rect key="frame" x="0.0" y="0.0" width="37.5" height="50"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1E-z9-K6p">
-                            <rect key="frame" x="405" y="0.0" width="41" height="50"/>
-                            <state key="normal" image="ADD">
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                            </state>
-                            <connections>
-                                <action selector="doAddFriend" destination="iN0-l3-epB" eventType="touchUpInside" id="xJ2-bM-Zfq"/>
-                            </connections>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="AfW-YE-JfS">
+                            <rect key="frame" x="10" y="53" width="466" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพื่อน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxK-if-TZQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="37.5" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1E-z9-K6p">
+                                    <rect key="frame" x="425" y="0.0" width="41" height="50"/>
+                                    <state key="normal" image="ADD">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="doAddFriend" destination="iN0-l3-epB" eventType="touchUpInside" id="xJ2-bM-Zfq"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="kPR-nr-3Ge"/>
+                            </constraints>
+                        </stackView>
                     </subviews>
+                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="kPR-nr-3Ge"/>
+                        <constraint firstItem="AfW-YE-JfS" firstAttribute="centerX" secondItem="1LM-rI-6SK" secondAttribute="centerX" id="9PT-HD-19j"/>
+                        <constraint firstItem="AfW-YE-JfS" firstAttribute="leading" secondItem="1LM-rI-6SK" secondAttribute="leading" constant="10" id="Vy7-Lp-6sY"/>
+                        <constraint firstAttribute="trailing" secondItem="AfW-YE-JfS" secondAttribute="trailing" constant="10" id="b7e-WD-ZtR"/>
+                        <constraint firstItem="AfW-YE-JfS" firstAttribute="centerY" secondItem="1LM-rI-6SK" secondAttribute="centerY" id="xM1-Mb-oQ6"/>
                     </constraints>
-                </stackView>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="0.94117647058823528" green="0.5607843137254902" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="AfW-YE-JfS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="AHG-7O-qks"/>
-                <constraint firstItem="AfW-YE-JfS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="SCJ-te-7zw"/>
-                <constraint firstItem="AfW-YE-JfS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jRe-9L-raZ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AfW-YE-JfS" secondAttribute="trailing" constant="20" id="lTH-Eg-tRr"/>
+                <constraint firstItem="1LM-rI-6SK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="5S8-Kj-gzk"/>
+                <constraint firstItem="1LM-rI-6SK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IOb-2p-WPI"/>
+                <constraint firstItem="1LM-rI-6SK" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="aAt-mu-2v2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1LM-rI-6SK" secondAttribute="bottom" id="ylI-N6-q6r"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

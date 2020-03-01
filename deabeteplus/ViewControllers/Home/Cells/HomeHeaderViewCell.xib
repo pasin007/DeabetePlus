@@ -26,8 +26,8 @@
                                 <constraint firstAttribute="width" constant="70" id="sYy-iH-azh"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdffsdgsdfgsfdgh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtz-8r-iF1">
-                            <rect key="frame" x="181" y="29.5" width="203" height="31.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdffsdgsdfgsfdgh" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtz-8r-iF1">
+                            <rect key="frame" x="192" y="14" width="192" height="62.5"/>
                             <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

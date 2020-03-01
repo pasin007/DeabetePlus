@@ -90,6 +90,7 @@ extension ChartViewCell {
         isInit = true
         let labelSettings = ChartLabelSettings(font: ChartConfigure.labelFont)
         
+    
         var calArray:[(Int,Int)] = []
         for (idx,cal) in cals.enumerated() {
             calArray.append((idx + 1,Int(cal)))

@@ -77,11 +77,11 @@ extension AccountViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let vFrame = view.frame
-        let header = FriendsListHeader(frame: vFrame)
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: FriendsListHeader.identifier) as! FriendsListHeader
         header.addAction = {
             print("ADD FRIEND")
         }
+        header.backgroundColor = .gray
         return header
     }
     
@@ -126,6 +126,8 @@ extension AccountViewController {
         nameLabel.text = user.name
         if let imageUrl = user.image, let url = URL(string: imageUrl) {
             profileImageView.kf.setImage(with: url)
+        } else {
+            profileImageView.image = UIImage(named: "PROFILE3")
         }
     }
     

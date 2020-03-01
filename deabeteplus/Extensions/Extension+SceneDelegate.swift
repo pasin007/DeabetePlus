@@ -50,7 +50,7 @@ import NVActivityIndicatorView
 extension SceneDelegate {
     
     func checkUserLogin() {
-        guard let userId = UserManager.shared.userId else {
+        guard  UserManager.shared.isLogin else {
             // not login
             window?.makeKeyAndVisible()
             Navigator.shared.showLoginView(window?.rootViewController)

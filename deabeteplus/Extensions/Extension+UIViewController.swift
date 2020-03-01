@@ -88,11 +88,13 @@ extension UIViewController {
 
 import NVActivityIndicatorView
 class Loading: LoadingProtocol  {
+
     static func stopLoading(_ sender: (UIViewController & NVActivityIndicatorViewable)?) {
         guard let sender = sender else { return }
         sender.stopAnimating()
     }
     
+
     static func startLoading(_ sender: (UIViewController & NVActivityIndicatorViewable)?) {
         guard let sender = sender else { return }
         let font = UIFont(name: "Kodchasan-Bold", size: 18)

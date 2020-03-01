@@ -29,6 +29,13 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Application need to access camera</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Kodchasan-Regular.ttf</string>
+		<string>Kodchasan-Bold.ttf</string>
+		<string>Kodchasan-SemiBold.ttf</string>
+		<string></string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -69,12 +76,5 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Kodchasan-Regular.ttf</string>
-		<string>Kodchasan-Bold.ttf</string>
-		<string>Kodchasan-SemiBold.ttf</string>
-		<string></string>
-	</array>
 </dict>
 </plist>

@@ -16,16 +16,18 @@ class HomeHeaderViewCell: UITableViewHeaderFooterView, BaseViewCell {
 //        cell.textLabel?.font = font
 //    }
 
-    func configure(_ cal: String) {
-        if let calInt = Int(cal) {
-            let calText = calInt < 0 ? "เกิน \(calInt * -1) Kcal" : "\(cal) Kcal"
-            calLabel.text = calText
-            calLabel.textColor = .white
-            if let font = UIFont(name: "Kodchasan-Bold", size: 24){
-                calLabel.font = font
-            }
-            //Kodchasan-Bold
+    func configure( cal: Int, carb: Int) {
+        
+        let carbText = carb < 0 ? "เกิน \(carb * -1) Carb" : "\(carb) Carb"
+        let calText = cal < 0 ? "เกิน \(cal * -1) Kcal" : "\(cal) Kcal"
+        calLabel.text = "\(carbText) \n \(calText)"
+        calLabel.textColor = .white
+        
+        if let font = UIFont(name: "Kodchasan-Bold", size: 20){
+            calLabel.font = font
         }
+            //Kodchasan-Bold
+        
         profileImage.cornerRadius = profileImage.frame.width / 2
         guard let user = UserManager.shared.currentUser else { return }
         if let imageString = user.image, let imageUrl = URL(string: imageString) {

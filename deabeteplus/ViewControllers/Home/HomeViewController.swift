@@ -30,6 +30,7 @@ class HomeViewController: UIViewController, BaseViewController {
         }
     }
     private var calToEat: Int = 0
+    private var carbToEat: Int = 0
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
@@ -102,6 +103,7 @@ extension HomeViewController {
     func setFood(_ recommendFood: RecommendFood) {
         Loading.stopLoading(self)
         calToEat = recommendFood.cal_today
+        carbToEat = recommendFood.carb_today
         self.foods = recommendFood.foods
 //        calPerDayStringLabel.text = "\(foods.cal_today)"
     }
@@ -139,6 +141,7 @@ extension HomeViewController: UITableViewDataSource {
             cell.textLabel?.textColor = .white
             cell.backgroundColor = .clear
             
+            cell.selectionStyle = .none
             return cell
         }
         
@@ -166,7 +169,7 @@ extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HomeHeaderViewCell.identifier) as? HomeHeaderViewCell else { return nil }
-        header.configure("\(calToEat)")
+        header.configure(cal: calToEat, carb: carbToEat)
         return header
     }
 }
