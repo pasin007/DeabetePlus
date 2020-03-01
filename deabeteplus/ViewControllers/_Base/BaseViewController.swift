@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
+
+typealias BaseViewController = _BaseViewController & NVActivityIndicatorViewable
 
 protocol BaseViewControllerProtocol: class {
     static var instance: UIViewController { get }
 }
 
 /// MARK - Xib
-protocol BaseViewController: BaseViewControllerProtocol {}
-extension BaseViewController where Self: UIViewController {
+protocol _BaseViewController: BaseViewControllerProtocol {}
+extension _BaseViewController where Self: UIViewController {
     static var instance: UIViewController {
         return Self(nibName: "\(Self.self)", bundle: nil)
     }

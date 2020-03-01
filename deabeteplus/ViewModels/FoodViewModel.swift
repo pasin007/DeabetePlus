@@ -12,7 +12,10 @@ import Alamofire
 class FoodViewModel {
     
     func recommendFood(onSuccess: @escaping(RecommendFood) -> Void,  onError: @escaping(Error?) -> Void) {
-        guard let user = UserManager.shared.currentUser else { return }
+        guard let user = UserManager.shared.currentUser else {
+            onError(nil)
+            return
+        }
         let parms = ["user_id":user.id]
         Alamofire.request(UrlManager.recommendFood.path, method: .post, parameters: parms).responseJSON {
             (dataResponse) in

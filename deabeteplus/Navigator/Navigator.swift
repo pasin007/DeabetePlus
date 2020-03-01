@@ -52,12 +52,12 @@ extension Navigator {
         sender?.navigationController?.pushViewController(view, animated: true)
     }
     
-//    func navigatorToSendOTP<VC: UIViewController>(_ sender: VC?, profile: UserProfile, isSend: Bool = false) {
-//        guard let view = appNavigation.navigatorToSendOTP() as? ConfirmOTPViewController else { return }
+    func navigatorToSendOTP<VC: UIViewController>(_ sender: VC?) {
+        guard let view = appNavigation.navigatorToSendOTP() as? ConfirmOTPViewController else { return }
 //        view.profile = profile
 //        view.isSend = isSend
-//        sender?.navigationController?.pushViewController(view, animated: true)
-//    }
+        sender?.navigationController?.pushViewController(view, animated: true)
+    }
     
 //    func navigatorUserProfile<VC: UIViewController>(_ sender: VC?, profile: UserProfile) {
 //        guard let view = appNavigation.navigatorUserProfile() as? UserProfileViewController else { return }

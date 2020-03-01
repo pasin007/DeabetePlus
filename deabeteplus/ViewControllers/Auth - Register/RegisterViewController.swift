@@ -17,6 +17,8 @@ class RegisterForm {
     var image: String?
     var weight: String?
     var height: String?
+    var profileImage: UIImage?
+    var profileImageUrl: String?
     
     var parameters: [String:Any] {
         var parameters = [String:Any]()
@@ -25,6 +27,7 @@ class RegisterForm {
         parameters["weight"] = weight
         parameters["height"] = height
         parameters["gender"] = gender
+        parameters["image"] = profileImageUrl
         
         if let date = birthdate?.toDate(withFormat: "dd MMMM yyyy") {
             let birthdate = date.toString("yyyy-MM-dd")
@@ -60,6 +63,9 @@ class RegisterViewController: UIViewController, BaseViewController {
     
     // MARK: - Properties
     private var form: RegisterForm = RegisterForm()
+    private let viewModel: UserViewModel = UserViewModel()
+    private let imageViewModel: ImageViewModel = ImageViewModel()
+    private var picker: UIImagePickerController = UIImagePickerController()
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
@@ -70,8 +76,32 @@ class RegisterViewController: UIViewController, BaseViewController {
     
     private func doSubmit() {
         debugPrint(form.parameters)
+        Loading.startLoading(self)
+        guard let image = form.profileImage else {
+            doRegiser()
+            return
+        }
+        imageViewModel.uploadImage(image, path: "profile", onSuccess: { [weak self] (url) in
+//            self.doRegiser("\(url.absoluteString)")
+            self?.form.profileImageUrl = url.absoluteString
+            self?.doRegiser()
+        }) { (_) in
+            Loading.stopLoading(self)
+        }
+       
     }
-
+    
+    private func doRegiser() {
+        viewModel.register(form.parameters, onSuccess: {  [weak self]  (user) in
+            UserManager.shared.login(user)
+            self?.dismiss(animated: true)
+            Loading.stopLoading(self)
+        }) { [weak self] (_) in
+            print("error")
+            self?.alert(title: "already user")
+            Loading.stopLoading(self)
+        }
+    }
 }
 
 extension RegisterViewController {
@@ -85,6 +115,61 @@ extension RegisterViewController {
     }
 }
 
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    private func selectImage() {
+        // เลือก option รูป
+        let alert: UIAlertController = UIAlertController(title: "Select Action", message: nil, preferredStyle: .actionSheet)
+               
+        // camera action
+        let cameraAction: UIAlertAction = UIAlertAction(title: "Camera", style: .default) { [weak self] (_) in
+            self?.openCamera()
+        }
+        alert.addAction(cameraAction)
+               
+               
+        // photo Library action
+        let photoLibraryAction: UIAlertAction = UIAlertAction(title: "Photo Library", style: .default) { [weak self] (_) in
+            self?.openPhotoLibrary()
+        }
+               
+        alert.addAction(photoLibraryAction)
+               
+        // cancel action
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) )
+               
+        present(alert, animated: true)
+    }
+    
+    // STEP: 2
+    private func openCamera() {
+        picker.sourceType = .camera
+        picker.allowsEditing = false
+        picker.delegate = self
+        
+        present(picker, animated: true)
+    }
+    
+    // STEP: 2
+    private func openPhotoLibrary() {
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = false
+        picker.delegate = self
+        
+        present(picker, animated: true)
+    }
+    
+    // STEP: 3
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // ทำงานหลังจากเลือกรูปเสร็จ
+        
+        guard let image = info[.originalImage] as? UIImage else { return }
+        form.profileImage = image
+        tableView.reloadData()
+        // ปิดหน้าเลือกรูป
+        dismiss(animated: true)
+    }
+}
 extension RegisterViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return RegisterCells.allCases.count
@@ -95,6 +180,8 @@ extension RegisterViewController: UITableViewDataSource {
         switch rowCell {
         case .image:
             let cell = tableView.dequeueReusableCell(withIdentifier: SelectImageViewCell.identifier, for: indexPath) as! SelectImageViewCell
+            cell.profileImageView.image = form.profileImage != nil ? form.profileImage : UIImage(named: "PROFILE")
+            cell.selectAction = selectImage
             return cell
         case .mobile:
             let cell = tableView.dequeueReusableCell(withIdentifier: RegisterFieldViewCell.identifier, for: indexPath) as! RegisterFieldViewCell

@@ -11,8 +11,7 @@ import MaterialTextField
 
 class LoginViewController: UIViewController, BaseViewController {
 
-    @IBOutlet weak var emailTextfield: MFTextField!
-    @IBOutlet weak var passwordTextfield: MFTextField!
+    @IBOutlet weak var phoneTextfield: MFTextField!
     
     private var viewModel: UserViewModel = UserViewModel()
     
@@ -29,22 +28,30 @@ class LoginViewController: UIViewController, BaseViewController {
 
 extension LoginViewController {
     @IBAction func doLogin() {
-        guard let email = emailTextfield.text,
-            let password = passwordTextfield.text,
-            !email.trim.isEmpty,
-            !password.trim.isEmpty else { return }
+        guard let phone = phoneTextfield.text,
+            !phone.trim.isEmpty else { return }
         
-        let parms: [String:Any] = [
-            "email": email,
-            "password": password
-        ]
-//        viewModel.login(pa
-        viewModel.login(parms, onSuccess: { [weak self] user in
-            UserManager.shared.login(user)
-            self?.dismiss(animated: true)
-        }, onError: { error in
-            
-        })
+//        let parms: [String:Any] = [
+//            "phone": phone,
+//        ]
+        
+        Loading.startLoading(self)
+//        viewModel.login(parms, onSuccess: { [weak self] user in
+//            Loading.stopLoading(self)
+//            UserManager.shared.login(user)
+//            self?.dismiss(animated: true)
+//        }, onError: { error in
+//            Loading.stopLoading(self)
+//        })
+        
+        viewModel.sendOTP(phone) { [weak self] (status) in
+            Loading.stopLoading(self)
+            guard status else {
+                self?.alert(title: "error")
+                return
+            }
+            Navigator.shared.navigatorToSendOTP(self)
+        }
     }
     
     @IBAction func navigatorToRegister() {

@@ -27,9 +27,9 @@ class HomeHeaderViewCell: UITableViewHeaderFooterView, BaseViewCell {
             //Kodchasan-Bold
         }
         profileImage.cornerRadius = profileImage.frame.width / 2
-//        guard let currentProfile = UserManager.shared.currentUser?.currentProfile else { return }
-//        if let imageString = currentProfile.image, let imageUrl = URL(string: imageString) {
-//            profileImage.kf.setImage(with: imageUrl)
-//        }
+        guard let user = UserManager.shared.currentUser else { return }
+        if let imageString = user.image, let imageUrl = URL(string: imageString) {
+            profileImage.kf.setImage(with: imageUrl)
+        }
     }
 }

@@ -74,9 +74,9 @@ class UserViewModel {
     }
     
     func sendOTP(_ phoneNumber: String, completion: @escaping(Bool) -> Void) {
-        guard let userId = UserManager.shared.userId else { return }
+//        guard let userId = UserManager.shared.userId else { return }
         let parms: [String:Any] = [
-            "id": userId,
+//            "id": userId,
             "phone": phoneNumber
         ]
         Alamofire.request(UrlManager.getOTP.path, method: .post, parameters: parms).responseJSON { (dataResponse) in
@@ -90,20 +90,39 @@ class UserViewModel {
         }
     }
     
-    func checkOTP(_ otp: String, completion: @escaping(Bool) -> Void) {
-        guard let userId = UserManager.shared.userId else { return }
+    func checkOTP(_ otp: String, completion: @escaping(User?) -> Void) {
+//        guard let userId = UserManager.shared.userId else { return }
         let parms: [String:Any] = [
-            "id": userId,
+//            "id": userId,
             "otp": otp
         ]
         Alamofire.request(UrlManager.checkOTP.path, method: .post, parameters: parms).responseJSON { (dataResponse) in
-            guard let data = dataResponse.value as? [String:Any], let status = data["status"] as? Bool else {
+            
+            print(dataResponse.value)
+            guard let data = dataResponse.data else {
                 // do something...
-                completion(false)
+                completion(nil)
                 return
             }
+
+            do {
+                let decode: JSONDecoder = JSONDecoder()
+                let user =  try decode.decode(User.self, from: data)
+                completion(user)
+            } catch {
+                print(error)
+                print(error.localizedDescription)
+                completion(nil)
+            }
+
             
-            completion(status)
+//            guard let data = dataResponse.value as? [String:Any], let status = data["status"] as? Bool else {
+//                // do something...
+//                completion(false)
+//                return
+//            }
+//
+//            completion(status)
         }
     }
     

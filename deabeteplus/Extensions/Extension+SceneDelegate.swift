@@ -46,6 +46,7 @@ extension SceneDelegate {
 }
 
 /// MARK: Auth
+import NVActivityIndicatorView
 extension SceneDelegate {
     
     func checkUserLogin() {
@@ -56,12 +57,6 @@ extension SceneDelegate {
             return
         }
         // login
-//        guard UserManager.shared.currentUser != nil else { return }
-        UserViewModel().getProfile(userId, onSuccess: { (user) in
-            UserManager.shared.login(user)
-        }) { (_) in
-
-        }
 
     }
 }

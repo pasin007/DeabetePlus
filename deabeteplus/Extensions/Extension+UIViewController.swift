@@ -84,3 +84,28 @@ extension UIViewController {
         present(alert, animated: true, completion: completion)
     }
 }
+
+
+import NVActivityIndicatorView
+class Loading: LoadingProtocol  {
+    static func stopLoading(_ sender: (UIViewController & NVActivityIndicatorViewable)?) {
+        guard let sender = sender else { return }
+        sender.stopAnimating()
+    }
+    
+    static func startLoading(_ sender: (UIViewController & NVActivityIndicatorViewable)?) {
+        guard let sender = sender else { return }
+        let font = UIFont(name: "Kodchasan-Bold", size: 18)
+        let type: NVActivityIndicatorType = .ballPulse
+        let color: UIColor = .blue
+        let backgroundColor: UIColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+                             
+        sender.startAnimating(nil, message: nil, messageFont: font, type: type, color: color, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil, backgroundColor: backgroundColor, textColor: .white, fadeInAnimation: nil)
+    }
+    
+}
+
+protocol LoadingProtocol: NVActivityIndicatorViewable {
+    static func startLoading(_ sender: (UIViewController & NVActivityIndicatorViewable)?)
+    static func stopLoading(_ sender: (UIViewController & NVActivityIndicatorViewable)?)
+}

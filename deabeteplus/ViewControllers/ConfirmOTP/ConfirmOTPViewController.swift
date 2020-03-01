@@ -14,7 +14,7 @@ class ConfirmOTPViewController: UIViewController, BaseViewController {
     @IBOutlet weak var otpLabel: UILabel!
     @IBOutlet weak var otpButton: UIButton!
     
-    var isSend: Bool = false
+    var isSend: Bool = true
 //    var profile: UserProfile!
     private var viewModel: UserViewModel = UserViewModel()
     
@@ -25,10 +25,13 @@ class ConfirmOTPViewController: UIViewController, BaseViewController {
 //            sendOTP(profile.phone)
 //            otpButton.setTitle("ส่ง  otp", for: .normal)
 //        }
-        if isSend {
-            updateView()
-            alert(title: "OTP had been send")
-        }
+//        if isSend {
+//            updateView()
+        alert(title: "OTP had been send")
+        otpTextField.text = nil
+        otpTextField.placeholder = "OTP"
+        otpLabel.text = "Verification Number"
+//        }
         // Do any additional setup after loading the view.
     }
 
@@ -65,7 +68,7 @@ class ConfirmOTPViewController: UIViewController, BaseViewController {
             self?.alert(title: "OTP had been send")
             self?.isSend = true
             sender.setTitle("ส่ง otp ", for: .normal)
-            self?.updateView()
+//            self?.updateView()
         }
     }
     
@@ -84,11 +87,16 @@ class ConfirmOTPViewController: UIViewController, BaseViewController {
     
     func doCheckOTP(_ sender: UIButton) {
         guard let otp = otpTextField.text else { return }
-        viewModel.checkOTP(otp) { [weak self] (status) in
-            if !status {
-                self?.alert(title: "Error pls try agian")
-                return
-            }
+        Loading.startLoading(self)
+        viewModel.checkOTP(otp) { [weak self] (user) in
+            Loading.stopLoading(self)
+            guard let user = user else { return }
+            UserManager.shared.login(user)
+            self?.dismissView()
+//            if !status {
+//                self?.alert(title: "Error pls try agian")
+//                return
+//            }
             
 //            if let profile = self?.profile {
 //                UserManager.shared.currentUser?.currentProfile = profile

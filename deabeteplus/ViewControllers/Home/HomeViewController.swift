@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class HomeViewController: UIViewController, BaseViewController {
     
@@ -37,6 +38,7 @@ class HomeViewController: UIViewController, BaseViewController {
         if !AppManager.shared.isAcceptTerm {
 //            Navigator.shared.showAccepTermVIew(self)
         }
+        fetchUser()
         // Do any additional setup after loading the view.
     }
 
@@ -55,6 +57,8 @@ class HomeViewController: UIViewController, BaseViewController {
         Navigator.shared.showLoginView(self)
         
     }
+    
+
 
 }
 
@@ -75,13 +79,28 @@ extension HomeViewController {
         print(calPerDayString)
     }
     
+    func fetchUser() {
+        guard let userId = UserManager.shared.userId else { return }
+        Loading.startLoading(self)
+        UserViewModel().getProfile(userId, onSuccess: { [weak self] (user) in
+            UserManager.shared.login(user)
+            Loading.stopLoading(self)
+            self?.fetchFood()
+        }) { [weak self] (_) in
+            Loading.stopLoading(self)
+        }
+        
+    }
+    
     func fetchFood() {
+        Loading.startLoading(self)
         viewModel.recommendFood(onSuccess: setFood) { (_) in
-            
+            Loading.stopLoading(self)
         }
     }
     
     func setFood(_ recommendFood: RecommendFood) {
+        Loading.stopLoading(self)
         calToEat = recommendFood.cal_today
         self.foods = recommendFood.foods
 //        calPerDayStringLabel.text = "\(foods.cal_today)"
