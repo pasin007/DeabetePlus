@@ -11,6 +11,9 @@ import NVActivityIndicatorView
 
 class HomeViewController: UIViewController, BaseViewController {
     
+    enum Page: Int {
+        case one = 0, two, three
+    }
     // MARK: - Outlet
 //    @IBOutlet weak var calPerDayStringLabel: UILabel!
     @IBOutlet weak var tableView: UITableView! {
@@ -18,7 +21,7 @@ class HomeViewController: UIViewController, BaseViewController {
             configureTableView()
         }
     }
-
+    @IBOutlet weak var pageControl: UIPageControl!
     
     // MARK: - Properties
     private var viewModel: FoodViewModel = FoodViewModel()
@@ -31,6 +34,8 @@ class HomeViewController: UIViewController, BaseViewController {
     }
     private var calToEat: Int = 0
     private var carbToEat: Int = 0
+    private var currentPage: Page = .one
+    
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
@@ -40,6 +45,8 @@ class HomeViewController: UIViewController, BaseViewController {
 //            Navigator.shared.showAccepTermVIew(self)
         }
         fetchUser()
+        
+        configureSwip()
         // Do any additional setup after loading the view.
     }
 
@@ -59,7 +66,6 @@ class HomeViewController: UIViewController, BaseViewController {
         
     }
     
-
 
 }
 
@@ -107,6 +113,38 @@ extension HomeViewController {
         self.foods = recommendFood.foods
 //        calPerDayStringLabel.text = "\(foods.cal_today)"
     }
+    
+    
+    @IBAction func pageControlSelectionAction(_ sender: UIPageControl) {
+        let page: Int? = sender.currentPage
+        currentPage =  Page(rawValue: page ?? 0)!
+    }
+    
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+       if gesture.direction == .right {
+            switch currentPage {
+            case .one:
+                break
+            case .two:
+               currentPage = .one
+                
+            case .three:
+               currentPage = .two
+            }
+            pageControl.currentPage = currentPage.rawValue
+       }
+       else if gesture.direction == .left {
+            switch currentPage {
+            case .one:
+                currentPage = .two
+            case .two:
+                currentPage = .three
+            case .three:
+                break
+            }
+          pageControl.currentPage = currentPage.rawValue
+       }
+    }
 }
 
 // MARK: - Configuration
@@ -121,6 +159,17 @@ extension HomeViewController {
         // Register Cells
         tableView.register(FoodViewCell.nib, forCellReuseIdentifier: FoodViewCell.identifier)
     }
+    
+    private func configureSwip() {
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+    }
+
 }
 
 // MARK: UITableViewDataSource
@@ -164,7 +213,7 @@ extension HomeViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 95
+        return 0//95
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

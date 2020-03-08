@@ -44,5 +44,6 @@ extension BaseTabBarViewController: UITabBarControllerDelegate {
         tabBar.isTranslucent = false
         delegate = self
         view.backgroundColor = .white
+        tabBar.tintColor = UIColor(hexString: "#BEDB86")
     }
 }

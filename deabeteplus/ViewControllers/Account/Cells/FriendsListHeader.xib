@@ -26,8 +26,8 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1E-z9-K6p">
-                                    <rect key="frame" x="425" y="0.0" width="41" height="50"/>
-                                    <state key="normal" image="ADD">
+                                    <rect key="frame" x="446" y="0.0" width="20" height="50"/>
+                                    <state key="normal" image="Group 13">
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                     </state>
                                     <connections>
@@ -41,7 +41,7 @@
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.94117647058823528" green="0.5607843137254902" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="AfW-YE-JfS" firstAttribute="centerX" secondItem="1LM-rI-6SK" secondAttribute="centerX" id="9PT-HD-19j"/>
                         <constraint firstItem="AfW-YE-JfS" firstAttribute="leading" secondItem="1LM-rI-6SK" secondAttribute="leading" constant="10" id="Vy7-Lp-6sY"/>
@@ -67,6 +67,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ADD" width="41" height="41"/>
+        <image name="Group 13" width="20" height="20"/>
     </resources>
 </document>

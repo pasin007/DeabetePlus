@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group 180" translatesAutoresizingMaskIntoConstraints="NO" id="6Zf-g6-2BM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroud01" translatesAutoresizingMaskIntoConstraints="NO" id="6Zf-g6-2BM">
                                 <rect key="frame" x="-17" y="0.0" width="448" height="381"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -30,6 +30,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Group 180" width="375" height="315"/>
+        <image name="backgroud01" width="375" height="360"/>
     </resources>
 </document>

@@ -65,6 +65,7 @@ extension AppManager {
         view.tabBarItem = UITabBarItem(title: " ", image: #imageLiteral(resourceName: "Vector 1"), tag: TabBarType.home.rawValue)
         view.hidesBottomBarWhenPushed = false
         view.title = "Home"
+        view.tabBarController?.tabBar.barTintColor = UIColor(hexString: "#BEDB86")
         return embededInNavigationController(view)
     }
 
@@ -72,7 +73,7 @@ extension AppManager {
 //        #imageLiteral(resourceName: "camera")
 //        UIImage(named: "camera")
         let view = ScanViewController.instance
-        view.tabBarItem = UITabBarItem(title: "Scan", image: #imageLiteral(resourceName: "Group 2-1"), tag: TabBarType.more.rawValue)
+        view.tabBarItem = UITabBarItem(title: "SCAN", image: #imageLiteral(resourceName: "Group 2-1"), tag: TabBarType.more.rawValue)
         view.hidesBottomBarWhenPushed = false
         view.title = "Scan"
 //        return embededInNavigationController(view)

@@ -23,9 +23,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 180" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hyi-Fs-kgc">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="315"/>
-                </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="mJW-gk-oIc">
                     <rect key="frame" x="25" y="362" width="364" height="172"/>
                     <subviews>
@@ -48,7 +45,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOY-nQ-ang">
                                             <rect key="frame" x="36" y="0.0" width="110" height="35"/>
-                                            <color key="backgroundColor" red="0.0" green="0.48709309099999998" blue="0.98007887599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" red="0.74509803921568629" green="0.85882352941176465" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="110" id="Qm1-ph-PEO"/>
                                                 <constraint firstAttribute="height" constant="35" id="llF-fl-Ux9"/>
@@ -61,10 +58,7 @@
                                                     <real key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                    <real key="value" value="1"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" red="0.0" green="0.4909332991" blue="0.9801021218" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <real key="value" value="0.0"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -91,7 +85,7 @@
                                                 <constraint firstAttribute="height" constant="35" id="lCr-K9-rmf"/>
                                             </constraints>
                                             <state key="normal" title="สมัครสมาชิก">
-                                                <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleColor" red="0.74509803919999995" green="0.85882352939999995" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -101,7 +95,7 @@
                                                     <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="value" red="0.74509803919999995" green="0.85882352939999995" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -135,17 +129,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="mJW-gk-oIc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0RE-gm-r2r"/>
-                <constraint firstItem="Hyi-Fs-kgc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8YW-cB-deu"/>
                 <constraint firstItem="mJW-gk-oIc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Fiq-r6-Ecw"/>
-                <constraint firstItem="Hyi-Fs-kgc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Hin-hE-7d8"/>
                 <constraint firstAttribute="trailing" secondItem="mJW-gk-oIc" secondAttribute="trailing" constant="25" id="KTY-6y-rfL"/>
-                <constraint firstItem="Hyi-Fs-kgc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="quC-uF-6mZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
         </view>
     </objects>
-    <resources>
-        <image name="Group 180" width="375" height="315"/>
-    </resources>
 </document>

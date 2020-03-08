@@ -41,7 +41,7 @@ class ScanViewController: UIViewController, BaseViewController, FoodDetailViewCo
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        statusScan = true
+        statusScan = false
 //        tabBarController?.tabBar.isHidden = true
     }
 
@@ -80,10 +80,14 @@ extension ScanViewController {
     
     
     private func getFoodData(_ name: String) {
+        Loading.startLoading(self)
         viewModel.getFood(name, onSuccess: { [weak self] (food) in
-            Navigator.shared.showFoodDetailView(self, food: food)
+            DispatchQueue.main.async { [weak self] in
+                Loading.stopLoading(self)
+                Navigator.shared.showFoodDetailView(self, food: food)
+            }
         }) { (error) in
-            
+             Loading.stopLoading(self)
         }
     }
     

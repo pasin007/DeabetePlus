@@ -99,12 +99,12 @@ class Loading: LoadingProtocol  {
         guard let sender = sender else { return }
         let font = UIFont(name: "Kodchasan-Bold", size: 18)
         let type: NVActivityIndicatorType = .ballPulse
-        let color: UIColor = .blue
+        let color = UIColor(hexString: "#BEDB86")
         let backgroundColor: UIColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
                              
         sender.startAnimating(nil, message: nil, messageFont: font, type: type, color: color, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil, backgroundColor: backgroundColor, textColor: .white, fadeInAnimation: nil)
     }
-    
+      
 }
 
 protocol LoadingProtocol: NVActivityIndicatorViewable {

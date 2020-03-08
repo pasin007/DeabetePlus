@@ -6,10 +6,22 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Kodchasan-Regular.ttf">
+            <string>Kodchasan-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FoodViewController" customModule="deabeteplus" customModuleProvider="target">
             <connections>
+                <outlet property="calLabel" destination="WPB-kS-8lT" id="dpF-iQ-eEB"/>
+                <outlet property="carbLabel" destination="d1L-j9-2AF" id="Fec-Nn-EGA"/>
+                <outlet property="fatLabel" destination="SfD-UB-Upv" id="QBd-4a-y1N"/>
+                <outlet property="proteinLabel" destination="6pp-oF-chk" id="8SJ-Fo-iOd"/>
+                <outlet property="sodiumLabel" destination="bja-SS-2EL" id="Hxn-Aa-GPO"/>
+                <outlet property="sugarLabel" destination="Usk-9d-zlS" id="NOJ-jY-7vf"/>
                 <outlet property="titleLabel" destination="oPL-cK-i1c" id="oay-oU-BlU"/>
+                <outlet property="valueTextfile" destination="dyS-PF-QKt" id="lek-N7-2Gz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,19 +31,260 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPL-cK-i1c">
-                    <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                    <rect key="frame" x="186" y="174" width="42" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C8-Ht-sTL">
+                    <rect key="frame" x="132" y="494.5" width="150" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="hNM-Fw-4pv"/>
+                    </constraints>
+                    <state key="normal" title="เพิ่มเป็นอาหารที่ทานแล้ว"/>
+                    <connections>
+                        <action selector="doEat" destination="-1" eventType="touchUpInside" id="JFr-rk-4qi"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qoV-0r-PDP">
+                    <rect key="frame" x="30" y="284.5" width="364" height="170"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UIF-P1-eWf">
+                            <rect key="frame" x="0.0" y="0.0" width="364" height="25"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="พลังงาน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiq-YE-baW">
+                                    <rect key="frame" x="0.0" y="0.0" width="134.5" height="25"/>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="19"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="709" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPB-kS-8lT">
+                                    <rect key="frame" x="144.5" y="0.0" width="133.5" height="25"/>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="19"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="กิโลแคล" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaK-8H-zfE">
+                                    <rect key="frame" x="288" y="0.0" width="76" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="76" id="bV1-pX-LCC"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="19"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aSq-Nn-XGT">
+                            <rect key="frame" x="0.0" y="33" width="364" height="21"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ปริมาณน้ำตาลโดยประมาณ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7J-JV-9lh">
+                                    <rect key="frame" x="0.0" y="0.0" width="210" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="210" id="7Tr-8k-lnm"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="800" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usk-9d-zlS">
+                                    <rect key="frame" x="220" y="0.0" width="64" height="21"/>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ช้อนชา" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnF-ua-uEa">
+                                    <rect key="frame" x="294" y="0.0" width="70" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="PND-9b-6qg"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uVO-ja-oyD">
+                            <rect key="frame" x="0.0" y="62" width="364" height="21"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="โปรตีน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lH-Fx-rnd">
+                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="21"/>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="709" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pp-oF-chk">
+                                    <rect key="frame" x="149.5" y="0.0" width="134.5" height="21"/>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="กรัม" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJj-EW-5pe">
+                                    <rect key="frame" x="294" y="0.0" width="70" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="zKG-fd-Po9"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n96-c0-Vqg">
+                            <rect key="frame" x="0.0" y="91" width="364" height="21"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="คาร์โบไฮเดรต" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZ9-AK-Qt2">
+                                    <rect key="frame" x="0.0" y="0.0" width="200.5" height="21"/>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="709" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1L-j9-2AF">
+                                    <rect key="frame" x="210.5" y="0.0" width="73.5" height="21"/>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="กรัม" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hI5-vH-Nef">
+                                    <rect key="frame" x="294" y="0.0" width="70" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="oii-vp-CfR"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gkH-3V-yYW">
+                            <rect key="frame" x="0.0" y="120" width="364" height="21"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ไขมัน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU1-JE-6gx">
+                                    <rect key="frame" x="0.0" y="0.0" width="117.5" height="21"/>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="709" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfD-UB-Upv">
+                                    <rect key="frame" x="127.5" y="0.0" width="156.5" height="21"/>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="กรัม" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fit-5s-uFn">
+                                    <rect key="frame" x="294" y="0.0" width="70" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="iOx-CW-0V8"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kpf-rZ-3be">
+                            <rect key="frame" x="0.0" y="149" width="364" height="21"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="โซเดียม" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cv-sh-DPJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="21"/>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="709" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bja-SS-2EL">
+                                    <rect key="frame" x="130" y="0.0" width="154" height="21"/>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="มิลลิกรัม" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wv3-ah-JIH">
+                                    <rect key="frame" x="294" y="0.0" width="70" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="F9L-ye-HTL"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="UIF-P1-eWf" secondAttribute="trailing" id="86A-k9-rJI"/>
+                        <constraint firstAttribute="trailing" secondItem="kpf-rZ-3be" secondAttribute="trailing" id="SZH-gU-UXx"/>
+                        <constraint firstAttribute="trailing" secondItem="n96-c0-Vqg" secondAttribute="trailing" id="TdS-zG-rc1"/>
+                        <constraint firstAttribute="trailing" secondItem="uVO-ja-oyD" secondAttribute="trailing" id="oDK-4D-JUa"/>
+                        <constraint firstAttribute="trailing" secondItem="aSq-Nn-XGT" secondAttribute="trailing" id="p2e-d3-NVw"/>
+                        <constraint firstAttribute="trailing" secondItem="gkH-3V-yYW" secondAttribute="trailing" id="y3c-8A-NW5"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YtO-qP-TPx">
+                    <rect key="frame" x="20" y="64" width="374" height="90"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mooDang" translatesAutoresizingMaskIntoConstraints="NO" id="qWv-l2-p7I">
+                            <rect key="frame" x="0.0" y="10" width="70" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="RJA-Em-ytC"/>
+                                <constraint firstAttribute="height" constant="70" id="spu-W5-rbY"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdffsdgsdfgsfdgh" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftd-TL-BvP">
+                            <rect key="frame" x="187" y="14" width="187" height="62.5"/>
+                            <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="aLU-P3-LnS"/>
+                    </constraints>
+                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="เลือกปริมาณ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dyS-PF-QKt" customClass="MFTextField">
+                    <rect key="frame" x="30" y="214.5" width="354" height="40"/>
+                    <color key="tintColor" red="0.74509803919999995" green="0.85882352939999995" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="yNK-Xh-zEV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Kodchasan-Regular" family="Kodchasan" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
+                            <color key="value" red="0.74509803919999995" green="0.85882352939999995" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ADD" translatesAutoresizingMaskIntoConstraints="NO" id="BC8-wi-sVG">
+                    <rect key="frame" x="359" y="234" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="CrL-AN-mh5"/>
+                        <constraint firstAttribute="height" constant="20" id="xi8-7X-NGq"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="oPL-cK-i1c" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NcH-SG-vwU"/>
+                <constraint firstItem="dyS-PF-QKt" firstAttribute="top" secondItem="oPL-cK-i1c" secondAttribute="bottom" constant="20" id="2yY-il-LCi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YtO-qP-TPx" secondAttribute="trailing" constant="20" id="52j-T8-fA9"/>
+                <constraint firstItem="BC8-wi-sVG" firstAttribute="leading" secondItem="dyS-PF-QKt" secondAttribute="trailing" constant="-25" id="8W5-ZM-cmX"/>
+                <constraint firstItem="dyS-PF-QKt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="IUn-7l-5Cd"/>
+                <constraint firstItem="BC8-wi-sVG" firstAttribute="top" secondItem="YtO-qP-TPx" secondAttribute="bottom" constant="80" id="RIV-Xh-Aoj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qoV-0r-PDP" secondAttribute="trailing" constant="20" id="Soh-nJ-lAg"/>
+                <constraint firstItem="YtO-qP-TPx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="aOT-XM-ROx"/>
+                <constraint firstItem="qoV-0r-PDP" firstAttribute="top" secondItem="dyS-PF-QKt" secondAttribute="bottom" constant="30" id="bKa-Bh-A1t"/>
+                <constraint firstItem="qoV-0r-PDP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="dl8-Lh-xHt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dyS-PF-QKt" secondAttribute="trailing" constant="30" id="epc-Ni-acf"/>
                 <constraint firstItem="oPL-cK-i1c" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="g7m-p4-Uhx"/>
+                <constraint firstItem="oPL-cK-i1c" firstAttribute="top" secondItem="YtO-qP-TPx" secondAttribute="bottom" constant="20" id="hXw-TI-oBK"/>
+                <constraint firstItem="3C8-Ht-sTL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kNZ-1R-WNK"/>
+                <constraint firstItem="YtO-qP-TPx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pS2-UB-AYY"/>
+                <constraint firstItem="3C8-Ht-sTL" firstAttribute="top" secondItem="qoV-0r-PDP" secondAttribute="bottom" constant="40" id="wg7-Hl-GUg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="107"/>
+            <point key="canvasLocation" x="137.68115942028987" y="106.47321428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="ADD" width="41" height="41"/>
+        <image name="mooDang" width="156" height="185"/>
+    </resources>
 </document>

@@ -47,7 +47,7 @@ class FoodDetailViewController: UIViewController, BaseViewController {
 extension FoodDetailViewController {
     @IBAction func doClose() {
         dismiss(animated: true) { [weak self] in
-            self?.delegate.statusScan = true
+            self?.delegate.statusScan = false
         }
     }
     
@@ -61,12 +61,13 @@ extension FoodDetailViewController {
     
     private func uploadImage(_ name: String) {
         guard let image = foodImageView.image else { return }
+        Loading.startLoading(self)
         imageViewModel.uploadImage(image, path: "scan", onSuccess: { [weak self] (url) in
             print(url.absoluteString)
             self?.doSaveScanHistory(name,url.absoluteString)
             
         }) { (error) in
-                
+              Loading.stopLoading(self)
         }
     }
     
@@ -77,6 +78,8 @@ extension FoodDetailViewController {
             "name" : name
         ]
         foodViewModel.scanFood(parms, onSuccess: { [weak self] (response) in
+            Loading.stopLoading(self)
+            
             let txt = response.status ? "กินอาหารเกิน" : ""
             
             var txt2 = ""
@@ -88,7 +91,7 @@ extension FoodDetailViewController {
                 default: break
             }
             
-             let sumText = txt + txt2
+            let sumText = txt + txt2
             if sumText != "" {
                  self?.alert(title: sumText, completionButton: { (_) in
                      self?.doClose()
@@ -98,7 +101,7 @@ extension FoodDetailViewController {
             }
             
         }) { (error) in
-                
+            Loading.stopLoading(self)
         }
     }
 }

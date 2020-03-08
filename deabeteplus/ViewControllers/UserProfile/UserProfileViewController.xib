@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 180" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UeP-JD-JlX">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroud01" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UeP-JD-JlX">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="345"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="UeP-JD-JlX" secondAttribute="height" multiplier="138:127" id="Tq1-eY-fKw"/>
@@ -127,7 +127,7 @@
         </label>
     </objects>
     <resources>
-        <image name="Group 180" width="375" height="315"/>
         <image name="PROFILE" width="41" height="41"/>
+        <image name="backgroud01" width="375" height="360"/>
     </resources>
 </document>

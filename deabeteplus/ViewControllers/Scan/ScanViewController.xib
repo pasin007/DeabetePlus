@@ -35,28 +35,38 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2m-hI-1cb">
-                    <rect key="frame" x="164" y="593" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2m-hI-1cb">
+                    <rect key="frame" x="20" y="585" width="335" height="54"/>
                     <fontDescription key="fontDescription" type="system" pointSize="35"/>
                     <state key="normal" title="Scan"/>
                     <connections>
                         <action selector="newScan" destination="-1" eventType="touchUpInside" id="aE7-ET-hr2"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 194" translatesAutoresizingMaskIntoConstraints="NO" id="zPe-Rx-r8G">
+                    <rect key="frame" x="65" y="288" width="245" height="228"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="M2m-hI-1cb" firstAttribute="top" secondItem="zPe-Rx-r8G" secondAttribute="bottom" constant="69" id="1xY-kK-Okr"/>
                 <constraint firstAttribute="trailing" secondItem="M2m-hI-1cb" secondAttribute="trailing" constant="20" id="77M-dp-tNI"/>
                 <constraint firstItem="0Lo-qw-0ep" firstAttribute="trailing" secondItem="zLU-Vk-MhA" secondAttribute="trailing" id="880-M2-SiV"/>
+                <constraint firstItem="zLU-Vk-MhA" firstAttribute="trailing" secondItem="zPe-Rx-r8G" secondAttribute="trailing" constant="65" id="F8X-rm-ZwG"/>
                 <constraint firstItem="0Lo-qw-0ep" firstAttribute="leading" secondItem="zLU-Vk-MhA" secondAttribute="leading" id="JzN-n5-Iqh"/>
                 <constraint firstItem="zLU-Vk-MhA" firstAttribute="trailing" secondItem="0Lo-qw-0ep" secondAttribute="trailing" id="Lp0-GP-XRb"/>
                 <constraint firstAttribute="bottom" secondItem="0Lo-qw-0ep" secondAttribute="bottom" constant="-100" id="P24-eN-dpQ"/>
                 <constraint firstItem="0Lo-qw-0ep" firstAttribute="top" secondItem="kMB-Sv-U9b" secondAttribute="top" id="Zeo-04-Yjp"/>
+                <constraint firstItem="zPe-Rx-r8G" firstAttribute="leading" secondItem="zLU-Vk-MhA" secondAttribute="leading" constant="65" id="bo7-1v-jl6"/>
                 <constraint firstItem="M2m-hI-1cb" firstAttribute="leading" secondItem="kMB-Sv-U9b" secondAttribute="leading" constant="20" id="h8A-Bh-JCl"/>
+                <constraint firstItem="zPe-Rx-r8G" firstAttribute="top" secondItem="zLU-Vk-MhA" secondAttribute="top" constant="244" id="jUw-Ni-Pz6"/>
                 <constraint firstItem="0Lo-qw-0ep" firstAttribute="leading" secondItem="zLU-Vk-MhA" secondAttribute="leading" id="yZ3-vA-GrH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="zLU-Vk-MhA"/>
             <point key="canvasLocation" x="837.60000000000002" y="117.48768472906404"/>
         </view>
     </objects>
+    <resources>
+        <image name="Group 194" width="228" height="228"/>
+    </resources>
 </document>
